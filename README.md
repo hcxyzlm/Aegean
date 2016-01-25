@@ -1,5 +1,31 @@
 # Aegean
-Aegean is a photos picker controller, which give you access to pick multiple photos from your Photos application. Its ui and ux is inspired from WeChat and Photos.
+Aegean is a photos picker controller (Objective-C & AssetLibrary), which give you access to pick multiple photos from your Photos application. Its UI and UX is inspired from WeChat and Photos.
+
+![GIF](https://github.com/Soul-Beats/Aegean/blob/master/Aegean.gif)
+
+##Requirements
+* iOS 7+
+
+
+##Setup Instruments
+Add files in `Source` directory to your project.
+
+##Usage
+Use it like `UIImagePickerController`, but pay attention to its apis:
+
+```objc
+@class AGNPhotosPickerController;
+@protocol AGNPhotosPickerControllerDelegate <NSObject>
+- (void)photosPickerControllerDidCancel:(AGNPhotosPickerController *)picker;
+- (void)photosPickerController:(AGNPhotosPickerController *)picker didFinishPickingPhotoAssets:(NSArray *)photoAssets;
+@end
+
+@interface AGNPhotosPickerController : UINavigationController
+@property (nonatomic, weak) id<AGNPhotosPickerControllerDelegate> pickerDelegate;
+@property (nonatomic, strong) UIColor *tintColor;
+@property (nonatomic, assign) NSUInteger maximumNumberOfPhotos;
+@end
+```
 
 ##MIT License
 ```
