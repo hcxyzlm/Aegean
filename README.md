@@ -8,10 +8,10 @@ Aegean is a photos picker controller (Objective-C & AssetLibrary), which give yo
 
 
 ##Setup Instruments
-Add files in `Source` directory to your project.
+Add `Source` directory to your project.
 
 ##Usage
-Use it like `UIImagePickerController`, but pay attention to its apis:
+Use it like `UIImagePickerController`, and use its apis to customize:
 
 ```objc
 @class AGNPhotosPickerController;
@@ -22,8 +22,8 @@ Use it like `UIImagePickerController`, but pay attention to its apis:
 
 @interface AGNPhotosPickerController : UINavigationController
 @property (nonatomic, weak) id<AGNPhotosPickerControllerDelegate> pickerDelegate;
-@property (nonatomic, strong) UIColor *tintColor;
-@property (nonatomic, assign) NSUInteger maximumNumberOfPhotos;
+@property (nonatomic, strong) UIColor *tintColor; // Color for selection appearance and done item
+@property (nonatomic, assign) NSUInteger maximumNumberOfSelectedPhotos;
 @end
 ```
 
